@@ -9,32 +9,36 @@
 }
 body {
     font-family: "Poppins", sans-serif;
+    padding: 0 20px;
 }
 
 /* .............Header Section......... */
 
 .header {
-    width: 80%;
+    max-width: 1280px;
     background-color: #0a082c;
-    display: flex;
-
+    background-image: url(./assets/Banner\ Image.png);
+    background-repeat: no-repeat;
     color: white;
     margin: 30px auto;
     border-radius: 9px;
+    background-position: right 5% top 20px;
+    background-size: contain;
 }
-.header-right {
+/* .header-right {
     width: 35%;
-}
+} */
 .header-left {
     width: 55%;
-    padding: 85px 65px 0 95px;
+    padding: 85px 65px;
 }
 
-.header-right img {
+/* .header-right img {
     width: 500px;
     height: 500px;
     padding: 10px 10px 0 0;
-}
+} */
+
 .header-btn {
     padding: 15px 30px;
     background-color: #dd0000;
@@ -43,7 +47,14 @@ body {
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+    transition: all 1s ease-in-out;
 }
+.header-btn:hover {
+    transform: scale(1.3, 1.3);
+}
+
 .header-left h1 {
     font-size: 45px;
     font-weight: 600;
@@ -60,7 +71,7 @@ body {
 }
 /* .......................................CONTAINER.......................... */
 .container {
-    width: 80%;
+    max-width: 1280px;
     margin: 5% auto;
     display: flex;
 }
@@ -90,10 +101,9 @@ body {
     border-radius: 4px;
     font-size: 14px;
 }
-.margin {
-    margin: 17px 0 17px 0;
+.button-link a:not(:last-child) {
+    margin-bottom: 20px;
 }
-
 /* ............blog............. */
 .blogs {
     display: grid;
@@ -206,4 +216,55 @@ hr {
 .time {
     font-size: 15px;
     color: rgba(22, 22, 22, 0.7);
+}
+
+/* ................Media Query ...............*/
+
+@media screen and (max-width: 1150px) {
+    .container {
+        flex-direction: column;
+    }
+    .scroll-button {
+        margin-bottom: 20px;
+        margin-right: 0;
+    }
+    .button-link {
+        width: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        margin: 0;
+    }
+    .button-link a {
+        margin: 0 !important;
+    }
+}
+@media screen and (max-width: 1000px) {
+    .header-left {
+        width: 80%;
+    }
+    .header-left h1 {
+        font-size: 30px;
+    }
+}
+@media screen and (max-width: 840px) {
+    .blogs {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 600px) {
+    .blogs {
+        grid-template-columns: 1fr;
+    }
+}
+@media screen and (max-width: 560px) {
+    .header-left {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 480px) {
+    .header {
+        background-position: center;
+        background-size: cover;
+    }
 }
